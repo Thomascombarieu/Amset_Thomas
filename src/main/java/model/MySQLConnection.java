@@ -12,11 +12,8 @@ import java.util.logging.Level;
 
 public class MySQLConnection {
     
-    //private static final String url = "jdbc:mysql://localhost:3306/ap4usertable";
-    //private static final String user = "root";
-    //private static final String pass = "";
-    private static final String url = "172.28.37.56/amset"; // Remplacez l'adresse par celle de votre serveur pour l'épreuve.
-    private static final String user = "root";                                    // Si c'est pas fait, créez un utilisateur sur phpmyadmin/adminer.
+    private static final String url = "jdbc:mysql://172.28.37.56:3306/amset"; // Remplacez l'adresse par celle de votre serveur pour l'épreuve.
+    private static final String user = "ap4amset";                                    // Si c'est pas fait, créez un utilisateur sur phpmyadmin/adminer.
     private static final String pass = "Btssio82300";
     
     private static Connection con = null;

@@ -29,7 +29,7 @@ public class UtilisateurDAO {
     public List<User> getAll() { // Récupère tout les utilisateurs
         try {
             List<User> utilisateur = new ArrayList<User>();
-            String query = "SELECT * FROM utilisateur";
+            String query = "SELECT * FROM UTILISATEUR";
             PreparedStatement ps = this.connexion.prepareStatement(query);
             ResultSet res = ps.executeQuery(query);
             while (res.next()) {
@@ -52,7 +52,7 @@ public class UtilisateurDAO {
 
     public User create(User utilisateur) { // Création de l'utilisateur
         try {
-            String sql = "INSERT INTO utilisateur (NOM, PRENOM, ADRESSE_MAIL, IDENTIFIANT, MOT_DE_PASSE) VALUES (?,?,?,?,?)";
+            String sql = "INSERT INTO UTILISATEUR (NOM, PRENOM, ADRESSE_MAIL, IDENTIFIANT, MOT_DE_PASSE) VALUES (?,?,?,?,?)";
             PreparedStatement ps = this.connexion.prepareStatement(sql);
             ps.setString(1, utilisateur.getNom());
             ps.setString(2, utilisateur.getPrenom());
@@ -70,7 +70,7 @@ public class UtilisateurDAO {
 
     public User update(User utilisateur) { // Modification de l'utilisateur
         try {
-            String sql = "UPDATE utilisateur SET NOM = ?, PRENOM = ?, ADRESSE_MAIL = ?, IDENTIFIANT = ?, MOT_DE_PASSE = ? WHERE ID = ?"; // Requête
+            String sql = "UPDATE UTILISATEUR SET NOM = ?, PRENOM = ?, ADRESSE_MAIL = ?, IDENTIFIANT = ?, MOT_DE_PASSE = ? WHERE ID = ?"; // Requête
             PreparedStatement ps = this.connexion.prepareStatement(sql);
             ps.setString(1, utilisateur.getNom());              // Récupération des valeurs pour la requète
             ps.setString(2, utilisateur.getPrenom());           
@@ -90,7 +90,7 @@ public class UtilisateurDAO {
     public void delete(int idUser) { // Suppression de l'utilisateur
         try {
             Connection connection = this.connexion;
-            String sql = "DELETE FROM utilisateur WHERE ID = ?";
+            String sql = "DELETE FROM UTILISATEUR WHERE ID = ?";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, idUser);
             ps.executeUpdate();
